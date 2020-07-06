@@ -1,7 +1,89 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+const addAll = function (arr) {
+  let result = 0
+  for (const num of arr) {
+    result += num
+  }
+  return result
+}
 
+
+
+
+const countSpaces = function(str) {
+  let count = 0
+  for (const currentChar of str) {
+    if (currentChar === ' '){
+      count ++
+    }
+  }
+  return count
+}
+
+
+
+const countTrues = function (arr) {
+  let count = 0
+  for (const item of arr) {
+    if (item === true) {
+      count ++
+    }
+  }
+  return count
+}
+
+
+
+
+const makeFriendly = function (paragraph) {
+  let result = ''
+  for (currentChar of paragraph) {
+    if (currentChar === '.') {
+      result += '!'
+    } else {
+      result += currentChar
+    }
+  }
+  return result
+}
+
+
+
+
+const cubeAll = function (arr) {
+  let result = []
+  for (const num of arr) {
+    result.push(Math.pow(num,3))
+  }
+  return result
+}
+
+
+
+
+const addNoises = function(arr) {
+  let result = []
+  for (const currentAnimal of arr) {
+    switch(currentAnimal) {
+      case 'Fido':
+      case 'Rolph':
+      case 'Maisie':
+        result.push(`${currentAnimal} says "Woof!"`)
+        break;
+      case 'Garfield':
+      case 'Heathcliff':
+        result.push(`${currentAnimal} says "Meow!"`)
+        break;
+      case 'Sharp Tooth':
+      case 'Barnie':
+        result.push(`${currentAnimal} says "ROWR."`) 
+        break;
+    }
+  }
+  return result
+}
 
 
 
@@ -124,7 +206,7 @@ describe('makeFriendly', () => {
   it(`given a paragraph, returns a paragraph where each sentence ends with an exclamation point instead of the period it held before.`, () => {
     const paragraph1 = `Do you see the story. Do you see anything. It seems to me I am trying to tell you a dream.`;
     const paragraph2 = `Like a running blaze on a plain, like a flash of lightning in the clouds. We live in the flicker.`;
-      const paragraph3 = `What is that feeling when you’re driving away from people and they recede on the plain till you see their specks dispersing. It’s the too-huge world vaulting us, and it’s good-bye. But we lean forward to the next crazy venture beneath the skies. Nothing behind me, everything ahead of me, as is ever so on the road.`;
+    const paragraph3 = `What is that feeling when you’re driving away from people and they recede on the plain till you see their specks dispersing. It’s the too-huge world vaulting us, and it’s good-bye. But we lean forward to the next crazy venture beneath the skies. Nothing behind me, everything ahead of me, as is ever so on the road.`;
 
     const friendly1 = `Do you see the story! Do you see anything! It seems to me I am trying to tell you a dream!`;
     const friendly2 = `Like a running blaze on a plain, like a flash of lightning in the clouds! We live in the flicker!`;
@@ -170,7 +252,7 @@ describe('cubeAll', () => {
 })
 
 describe('addNoises', () => {
-    it('adds the appropriate noises for each animal in the given array', () => {
+  it('adds the appropriate noises for each animal in the given array', () => {
     const dogs = [
       'Fido',
       'Rolph',
